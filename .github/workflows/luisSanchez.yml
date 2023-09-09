@@ -1,14 +1,17 @@
-name: CI Java
+name: CI Lab
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
 
-on: [push]
-
-jobs: 
-
+jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
 
-    -name: Checkout
-    uses: actions/chechout@v3.5.3
-      with:
-        ref: luisSanchez
+    steps:
+      -name: Checkout
+       uses: actions/checkout@v3.5.3
+
+      - name: Run a one-line script
+        run: echo Hello from Octo Organization
