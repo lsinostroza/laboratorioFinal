@@ -1,4 +1,4 @@
-name: Cobertura PruebaUnitarias
+name: CI Java
 on: [push]
 
 jobs:
@@ -20,4 +20,3 @@ jobs:
       run: mvn -B package --file pom.xml
 
       
-
