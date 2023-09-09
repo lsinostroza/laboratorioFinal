@@ -10,6 +10,5 @@ jobs:
 
     -name: Checkout
     uses: actions/chechout@v3.5.3
-
-    -name: Descarga codigo
-    run: ls -ltr
+      with:
+        ref: luisSanchez
