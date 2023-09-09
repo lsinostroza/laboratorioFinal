@@ -1,0 +1,15 @@
+name: CI Java
+
+on: [push]
+
+jobs: 
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    -name: Checkout
+    uses: actions/chechout@v3.5.3
+
+    -name: Descarga codigo
+    run: ls -ltr
