@@ -72,6 +72,23 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+<!-- -->
+			<configuration>
+                                <check>
+                                        <haltOnFailure>true</haltOnFailure>
+                                </check>
+                        </configuration>
+                        <executions>
+                                <execution>
+                                        <goals>
+                                                <goal>clean</goal>
+                                                <goal>check</goal>
+                                        </goals>
+                                </execution>
+                        </executions>
+
+<!-- -->			
+			
 		</plugins>
 	</build>
 
