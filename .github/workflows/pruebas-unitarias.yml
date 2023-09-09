@@ -1,4 +1,4 @@
-name: CI Java
+name: PruebasUnitarias
 on: [push]
 
 jobs:
