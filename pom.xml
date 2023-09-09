@@ -83,5 +83,36 @@
 			<url>https://repo.spring.io/milestone</url>
 		</repository>
 	</repositories>
-  
+
+<reporting>
+        <plugins>
+                <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>cobertura-maven-plugin</artifactId>
+                </plugin>
+        </plugins>
+</reporting>
+
+<build>
+        <plugins>
+                <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>cobertura-maven-plugin</artifactId>
+                        <configuration>
+                                <check>
+                                        <haltOnFailure>true</haltOnFailure>
+                                </check>
+                        </configuration>
+                        <executions>
+                                <execution>
+                                        <goals>
+                                                <goal>clean</goal>
+                                                <goal>check</goal>
+                                        </goals>
+                                </execution>
+                        </executions>
+                </plugin>
+        </plugins>
+</build>
+
 </project>
