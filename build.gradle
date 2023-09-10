@@ -47,6 +47,18 @@ subprojects {
 	}
 }
 
+sonar {
+	properties{
+		property "sonar.projectKey", "laboratorioFinal"
+		property "sonar.organization", "lsinostroza"
+		property "sonar.host.url", "https://sonarcloud.io"
+	}
+}
+
+test{
+	useJUnitPlatform()
+}
+
 bootJar {
 	enabled = false
 }
