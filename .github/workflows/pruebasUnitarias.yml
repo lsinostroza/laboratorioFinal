@@ -20,5 +20,5 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Analysis SonarCloud
-      run: mvn sonar:sonar -Pcoverage
+      run: mvn -Dsonar.coverage.jacoco.xmlReportPaths=../app-it/target/site/jacoco-aggregate/jacoco.xml sonar:sonar -Pcoverage
       
