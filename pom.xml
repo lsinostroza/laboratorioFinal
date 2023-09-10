@@ -73,26 +73,42 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-			<plugin>
-                        	<groupId>org.codehaus.mojo</groupId>
-                        	<artifactId>cobertura-maven-plugin</artifactId>
-
-				<configuration>
-                                <check>
-                                        <haltOnFailure>true</haltOnFailure>
-                                </check>
-	                        </configuration>
-				
-	                        <executions>
-	                                <execution>
-	                                        <goals>
-	                                                <goal>clean</goal>
-	                                                <goal>check</goal>
-	                                        </goals>
-	                                </execution>
-	                        </executions>
-				
-                	</plugin>
+		 <plugin>
+		        <groupId>org.codehaus.mojo</groupId>
+		        <artifactId>cobertura-maven-plugin</artifactId>
+		        <version>2.7</version>
+		        <configuration>
+		          <check>
+		            <branchRate>85</branchRate>
+		            <lineRate>85</lineRate>
+		            <haltOnFailure>true</haltOnFailure>
+		            <totalBranchRate>85</totalBranchRate>
+		            <totalLineRate>85</totalLineRate>
+		            <packageLineRate>85</packageLineRate>
+		            <packageBranchRate>85</packageBranchRate>
+		            <regexes>
+		              <regex>
+		                <pattern>com.example.reallyimportant.*</pattern>
+		                <branchRate>90</branchRate>
+		                <lineRate>80</lineRate>
+		              </regex>
+		              <regex>
+		                <pattern>com.example.boringcode.*</pattern>
+		                <branchRate>40</branchRate>
+		                <lineRate>30</lineRate>
+		              </regex>
+		            </regexes>
+		          </check>
+		        </configuration>
+		        <executions>
+		          <execution>
+		            <goals>
+		              <goal>clean</goal>
+		              <goal>check</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+	      </plugin>
 			
 		</plugins>
 	</build>
@@ -108,18 +124,14 @@
   <reporting>
     <plugins>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.7</version>
         <reportSets>
           <reportSet>
-            <id>sunlink</id>
             <reports>
-              <report>javadoc</report>
+              <report>cobertura</report>
             </reports>
-            <inherited>true</inherited>
-            <configuration>
-              <links>
-                <link>http://java.sun.com/j2se/1.5.0/docs/api/</link>
-              </links>
-            </configuration>
           </reportSet>
         </reportSets>
       </plugin>
